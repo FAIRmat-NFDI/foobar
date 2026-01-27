@@ -45,7 +45,7 @@ jobs:
 
       - name: Check Jupyter Requirements
         run: |
-          uv pip compile pyproject.toml --group north -o requirements.txt
+          uv pip compile pyproject.toml --group north -o requirements.txt --python ${{ env.PYTHON_VERSION }}
           if [[ `git diff requirements.txt` ]]; then
            diff:
               git diff requirements.txt
