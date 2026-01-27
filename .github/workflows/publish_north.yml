@@ -46,9 +46,9 @@ jobs:
       - name: Check Jupyter Requirements
         run: |
 
-          uv pip compile pyproject.toml --all-extras -o requirements.txt
+          uv pip compile pyproject.toml --all-extras -o requirements.txt --python ${{ env.PYTHON_VERSION }}
           if [[ `git diff requirements.txt` ]]; then
-            echo "requirements.txt is not up to date. Please run 'uv pip compile pyproject.toml --all-extras -o requirements.txt' and commit the changes."
+            echo "requirements.txt is not up to date. Please run 'uv pip compile pyproject.toml --all-extras -o requirements.txt --python ${{ env.PYTHON_VERSION }}' and commit the changes."
             echo "Diff:"
             git diff requirements.txt
             exit 1
