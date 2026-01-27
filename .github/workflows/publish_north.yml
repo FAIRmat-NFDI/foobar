@@ -47,7 +47,10 @@ jobs:
         run: |
           uv pip compile pyproject.toml --group north -o requirements.txt
           if [[ `git diff requirements.txt` ]]; then
-            echo "requirements.txt is not up to date. Please run 'uv pip compile pyproject.toml --group north -o requirements.txt --python ${{ env.PYTHON_VERSION }}' and commit the changes."
+           diff:
+              git diff requirements.txt
+
+           echo "requirements.txt is not up to date. Please run 'uv pip compile pyproject.toml --group north -o requirements.txt --python ${{ env.PYTHON_VERSION }}' and commit the changes."
             exit 1
           fi
 
