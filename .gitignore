@@ -128,3 +128,50 @@ dmypy.json
 
 # Pyre type checker
 .pyre/
+
+# Pytype static type analyzer
+.pytype/
+__pycache__/
+
+# Cython debug symbols
+cython_debug/
+
+# PyCharm
+.idea/
+*.iml
+
+# VS Code
+.vscode/
+*.code-workspace
+
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# Linux
+*~
+.directory
+
+# Windows
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+
+# Temporary files
+*.tmp
+*.bak
+*.swp
+*.swo
+*~
+
+# uv
+.uv/
+uv.lock
+
+# Ruff
+.ruff_cache/
+
+# pytest
+.pytest_cache/
+pytestdebug.log
