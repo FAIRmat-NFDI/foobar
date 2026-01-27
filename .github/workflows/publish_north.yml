@@ -14,7 +14,7 @@ env:
   UV_VERSION: 0.9
   PYTHON_VERSION: 3.12
   JUPYTER_VERSION: 2025-04-14
-  NORTH_TOOL_DIR: src/{{cookiecutter.module_name}}/north_tools/{{cookiecutter.north_tool_name}}
+  NORTH_TOOL_DIR: src/foobar/north_tools/my_north_tool
 
 permissions:
   packages: write
@@ -45,12 +45,9 @@ jobs:
 
       - name: Check Jupyter Requirements
         run: |
-
-          uv pip compile pyproject.toml --all-extras -o requirements.txt --python ${{ env.PYTHON_VERSION }}
+          uv pip compile pyproject.toml --all-extras -o requirements.txt --python-version ${{ env.PYTHON_VERSION }}
           if [[ `git diff requirements.txt` ]]; then
-            echo "requirements.txt is not up to date. Please run 'uv pip compile pyproject.toml --all-extras -o requirements.txt --python ${{ env.PYTHON_VERSION }}' and commit the changes."
-            echo "Diff:"
-            git diff requirements.txt
+            echo "requirements.txt is not up to date. Please run 'uv pip compile pyproject.toml --all-extras -o requirements.txt --python-version ${{ env.PYTHON_VERSION }}' and commit the changes."
             exit 1
           fi
 
@@ -73,11 +70,9 @@ jobs:
           # set latest tag for main branch and tags
           # https://github.com/docker/metadata-action?tab=readme-ov-file#image-name-and-tag-sanitization
           tags: |
-
             type=ref,event=tag
             type=ref,event=pr,{{branch}}-
             type=raw,value=main,enable=${{ github.ref == format('refs/heads/{0}', 'main') }}
-
           flavor: |
             latest=auto
 
@@ -89,10 +84,8 @@ jobs:
           context: .
           file: ${{ env.NORTH_TOOL_DIR }}/Dockerfile
           build-args: |
-
             UV_VERSION=${{ env.UV_VERSION }}
             JUPYTER_VERSION=${{ env.JUPYTER_VERSION }}
-
           cache-from: type=gha
           cache-to: type=gha,mode=max
           push: true
