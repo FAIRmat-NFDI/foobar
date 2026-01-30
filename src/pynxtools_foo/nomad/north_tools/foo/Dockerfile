@@ -1,7 +1,9 @@
 ARG JUPYTER_TAG=2025-10-20
 ARG BASE_JUPYTER=quay.io/jupyter/scipy-notebook
 ARG UV_VERSION=0.9
-ARG PLUGIN_NAME="PLUGIN_NAME"
+ARG PLUGIN_NAME=pynxtools-foo
+# Replace plugin-name by __package_name
+
 FROM ghcr.io/astral-sh/uv:${UV_VERSION} AS uv_stage
 
 FROM ${BASE_JUPYTER}:${JUPYTER_TAG} AS scipy_notebook

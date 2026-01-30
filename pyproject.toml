@@ -58,7 +58,7 @@ nomad = ["nomad-lab[infrastructure]>=1.3.17"]
 "Homepage" = "https://github.com/FAIRmat-NFDI/pynxtools-foo"
 "Bug Tracker" = "https://github.com/FAIRmat-NFDI/pynxtools-foo/issues"
 
-[project.entry-points.'pynxtools.reader']
+[project.entry-points.'pynxtools.reader'] 
 foo = "pynxtools_foo.reader:FOOReader"
 
 [project.entry-points.'nomad.plugin']
