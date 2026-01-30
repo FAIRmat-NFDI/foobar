@@ -100,6 +100,7 @@ jobs:
           docker load -i ${{ runner.temp }}/jupyter.tar
 
           RAW_TAGS="${{ needs.build.outputs.tags }}"
+          echo "Raw tags: '$RAW_TAGS'"
           FIRST_TAG=$(printf '%s' "$RAW_TAGS" | head -n 1)
 
           if [ -z "$FIRST_TAG" ]; then
