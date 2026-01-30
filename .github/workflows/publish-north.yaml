@@ -40,11 +40,11 @@ jobs:
           show-progress: true
           submodules: true
 
-      - name: Install uv
-        uses: astral-sh/setup-uv@v7
-        with:
-          python-version: ${{ env.PYTHON_VERSION }}
-          version: ${{ env.UV_VERSION }}
+      # - name: Install uv
+      #   uses: astral-sh/setup-uv@v7
+      #   with:
+      #     python-version: ${{ env.PYTHON_VERSION }}
+      #     version: ${{ env.UV_VERSION }}
 
       #- name: Check Jupyter Requirements
       #  run: |
