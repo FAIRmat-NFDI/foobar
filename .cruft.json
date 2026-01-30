@@ -1,31 +1,34 @@
 {
-  "template": "/home/rubel/NOMAD-FAIRmat/cookiecutter-nomad-plugin",
-  "commit": "005d5eae9b1ee85c543e669bdb3c496e91707b02",
+  "template": "/home/rubel/NOMAD-FAIRmat/pynxtools-plugin-template",
+  "commit": "3fa3b44c859419c5b58773c071a7a58188328b24",
   "checkout": null,
   "context": {
     "cookiecutter": {
-      "full_name": "John Doe",
-      "email": "john.doe@physik.hu-berlin.de",
+      "reader_name": "foo",
+      "supported_nxdl": "NXtest",
+      "short_description": "",
+      "technique": "FOO",
+      "reader_class": "FOOReader",
+      "author_name": "",
+      "author_email": "fairmat@physik.hu-berlin.de",
       "github_username": "RubelMozumder",
-      "plugin_name": "foobar",
-      "module_name": "foobar",
-      "short_description": "Nomad example template",
-      "version": "0.1.0",
-      "license": "MIT",
-      "include_schema_package": true,
-      "include_normalizer": true,
-      "include_parser": true,
-      "include_app": true,
-      "include_example_uploads": true,
-      "include_action": true,
+      "license": "Apache Software License 2.0",
+      "zenodo_record": "",
+      "vscode_settings": true,
+      "include_nomad_app": true,
+      "include_nomad_example_upload": true,
       "include_north_tools": true,
-      "north_tool_name": "my_north_tool",
+      "north_tool_name": "foo",
+      "__package_name": "pynxtools-foo",
+      "__module_name": "pynxtools_foo",
+      "__nomad_example": "foo_example_upload_entry_point",
+      "__nomad_app": "foo_app_entry_point",
       "__north_tool_EP_name": "north_tool",
       "_copy_without_render": [
         "*.html"
       ],
-      "_template": "/home/rubel/NOMAD-FAIRmat/cookiecutter-nomad-plugin",
-      "_commit": "005d5eae9b1ee85c543e669bdb3c496e91707b02"
+      "_template": "/home/rubel/NOMAD-FAIRmat/pynxtools-plugin-template",
+      "_commit": "3fa3b44c859419c5b58773c071a7a58188328b24"
     }
   },
   "directory": null

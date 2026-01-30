@@ -1,2 +1,5 @@
-recursive-include * nomad_plugin.yaml
-graft src/foobar/example_uploads
+prune *
+exclude *
+recursive-include src/pynxtools_foo *.py
+include pyproject.toml README.md
+graft src/pynxtools_foo/nomad/example_uploads
