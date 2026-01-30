@@ -3,6 +3,7 @@ on:
   push:
     branches:
       - main
+      - pynxtools-plugin
     tags:
       - "v*.*.*"
   pull_request:
@@ -52,11 +53,11 @@ jobs:
           # set latest tag for main branch and tags
           # https://github.com/docker/metadata-action?tab=readme-ov-file#image-name-and-tag-sanitization
           tags: |
-            
+
             type=ref,event=tag
             type=ref,event=pr,{{branch}}-
             type=raw,value=main,enable=${{ github.ref == format('refs/heads/{0}', 'main') }}
-            
+
           flavor: |
             latest=auto
 
@@ -98,7 +99,7 @@ jobs:
 
       - name: Load and test in Jupyter container
         run: |
-          
+
           docker load -i ${{ runner.temp }}/jupyter.tar
 
           RAW_TAGS="${{ needs.build.outputs.tags }}"
@@ -112,7 +113,6 @@ jobs:
               --rm "$FIRST_TAG" \
               /bin/bash -c "jupyter execute \$HOME/north_test/$nb"
           done
-          
 
       - uses: docker/login-action@v3
         with:
@@ -121,10 +121,9 @@ jobs:
           password: ${{ secrets.GITHUB_TOKEN}}
       - name: Push Jupyter Image
         run: |
-        
+
           RAW_TAGS="${{ needs.build.outputs.tags }}"
           for TAG in $RAW_TAGS; do
             echo "Pushing tag: $TAG"
             docker push "$TAG"
           done
-        
