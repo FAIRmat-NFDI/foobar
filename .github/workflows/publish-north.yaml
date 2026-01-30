@@ -100,14 +100,9 @@ jobs:
           docker load -i ${{ runner.temp }}/jupyter.tar
 
           RAW_TAGS="${{ needs.build.outputs.tags }}"
-          echo "Raw tags: '$RAW_TAGS'"
-          FIRST_TAG=$(printf '%s' "$RAW_TAGS" | head -n 1)
 
-          if [ -z "$FIRST_TAG" ]; then
-            echo "ERROR: No tags found!"
-            echo "Raw tags: '$RAW_TAGS'"
-            exit 1
-          fi
+          echo "Raw tags: $RAW_TAGS"
+          FIRST_TAG=$(echo "$RAW_TAGS" | tr -s '[:space:]' '\n' | grep -v '^$' | head -n 1)
           echo "Using tag: $FIRST_TAG"
 
           for nb in ${{ env.TEST_NOTEBOOKS }}; do
