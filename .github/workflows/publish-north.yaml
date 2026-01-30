@@ -16,7 +16,7 @@ env:
   PYTHON_VERSION: 3.12
   JUPYTER_VERSION: 2025-04-14
   NORTH_TOOL_DIR: src/pynxtools_foo/nomad/north_tools/foo
-  TEST_DATA_DIR: tests/data/foo
+  TEST_DATA_DIR: tests/data/north_tools/foo
   TEST_NOTEBOOKS: CommandLine.ipynb
 
 permissions:
