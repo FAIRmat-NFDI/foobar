@@ -45,20 +45,17 @@ docs = [
     "mkdocs-click"
 ]
 north = [
-    "h5glance>=0.8",
-    "h5grove>=1.1.0",
     "jupyterlab-h5web[full]>=7.1.1",
     "jupyterlab",
-    "punx>=0.2.5",
     "ipywidgets",
 ]
-nomad = ["nomad-lab[infrastructure]>=1.3.17"]
+nomad = ["nomad-lab[infrastructure]>=1.4.1rc2"]
 
 [project.urls]
 "Homepage" = "https://github.com/FAIRmat-NFDI/pynxtools-foo"
 "Bug Tracker" = "https://github.com/FAIRmat-NFDI/pynxtools-foo/issues"
 
-[project.entry-points.'pynxtools.reader'] 
+[project.entry-points.'pynxtools.reader']
 foo = "pynxtools_foo.reader:FOOReader"
 
 [project.entry-points.'nomad.plugin']

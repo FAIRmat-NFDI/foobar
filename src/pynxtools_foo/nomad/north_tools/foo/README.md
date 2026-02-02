@@ -4,11 +4,11 @@ This directory contains the NORTH tool configuration and Docker image for a Jupy
 
 ## Quick start
 
-The foo NORTH tool provides a containerized JupyterLab environment for interactive analysis with thepynxtools-foo plugin.
+The foo NORTH tool provides a containerized JupyterLab environment for interactive analysis with the pynxtools-foo plugin.
 
 ## Building and testing
 
-Build the Docker image locally:
+Build the Docker image locally from package root:
 
 ```bash
 docker build -f src/pynxtools_foo/north_tools/foo/Dockerfile \

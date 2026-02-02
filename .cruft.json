@@ -1,6 +1,6 @@
 {
   "template": "/home/rubel/NOMAD-FAIRmat/pynxtools-plugin-template",
-  "commit": "8200eb1639d5d66c8b35eb9aefc14f0b148bc89e",
+  "commit": "f36c87bacbd2d7de7b4b7a61380ec72ee5022a40",
   "checkout": null,
   "context": {
     "cookiecutter": {
@@ -28,7 +28,7 @@
         "*.html"
       ],
       "_template": "/home/rubel/NOMAD-FAIRmat/pynxtools-plugin-template",
-      "_commit": "8200eb1639d5d66c8b35eb9aefc14f0b148bc89e"
+      "_commit": "f36c87bacbd2d7de7b4b7a61380ec72ee5022a40"
     }
   },
   "directory": null

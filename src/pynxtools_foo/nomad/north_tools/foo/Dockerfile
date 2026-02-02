@@ -2,11 +2,10 @@ ARG JUPYTER_TAG=2025-12-31
 ARG BASE_JUPYTER=quay.io/jupyter/base-notebook
 ARG UV_VERSION=0.9
 ARG PLUGIN_NAME=pynxtools-foo
-# Replace plugin-name by __package_name
 
 FROM ghcr.io/astral-sh/uv:${UV_VERSION} AS uv_stage
 
-FROM ${BASE_JUPYTER}:${JUPYTER_TAG} AS scipy_notebook
+FROM ${BASE_JUPYTER}:${JUPYTER_TAG} AS base_notebook
 # https://github.com/hadolint/hadolint/wiki/DL4006
 # https://github.com/koalaman/shellcheck/wiki/SC3014
 SHELL ["/bin/bash", "-o", "pipefail", "-c"]
@@ -24,18 +23,16 @@ ARG PLUGIN_NAME
 
 RUN apt-get update \
  && apt-get install --yes --quiet --no-install-recommends \
-      libgomp1 \
       libmagic1 \
       file \
-      gcc \
       build-essential \
       curl \
       zip \
       unzip \
       git
 
-# By default scipy-notebook:2025-10-20 has node 18
-# But, node > 20 needed for jupyterlab >= 4.4.10
+# By default base-notebook:2025-10-20 has node 18
+# But, node > 20 is required for jupyterlab >= 4.4.10
 # Add NodeSource APT repo for Debian-base distributions repository
 RUN curl -fsSL https://deb.nodesource.com/setup_24.x | bash -
 
@@ -51,7 +48,7 @@ USER ${NB_USER}
 ENV UV_PROJECT_ENVIRONMENT=${CONDA_DIR} \
     UV_LINK_MODE=copy \
     UV_NO_CACHE=1 \
-    # Use python from conda which is default for scipy-notebook
+    # Use python from conda which is default for base-notebook
     # so that uv pip and pip refer to the same python
     # If needed one can create another venv with 'uv venv'
     UV_SYSTEM_PYTHON=1
