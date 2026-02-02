@@ -1,16 +1,20 @@
----
-hide: toc
----
+# Welcome to the `foobar` documentation
 
-# Documentation for pynxtools-foo
+Nomad example template
+
+## Introduction
+
+!!! note "Attention"
+    TODO
 
 <div markdown="block" class="home-grid">
 <div markdown="block">
 
 ### Tutorial
 
-- [Installation guide](tutorial/installation.md)
-- [Development guide](tutorial/contributing.md)
+TODO
+
+- [Tutorial](tutorial/tutorial.md)
 
 </div>
 <div markdown="block">
@@ -19,30 +23,26 @@ hide: toc
 
 How-to guides provide step-by-step instructions for a wide range of tasks, with the overarching topics:
 
+- [Install this plugin](how_to/install_this_plugin.md)
+- [Use this plugin](how_to/use_this_plugin.md)
+- [Contribute to this plugin](how_to/contribute_to_this_plugin.md)
+- [Contribute to the documentation](how_to/contribute_to_the_documentation.md)
+
 </div>
 
 <div markdown="block">
 
-### Learn
+### Explanation
+
+The explanation [section](explanation/explanation.md) provides background knowledge on this plugin.
 
 </div>
 <div markdown="block">
 
 ### Reference
 
+The reference [section](reference/references.md) includes all CLI commands and arguments, all configuration options,
+the possible schema annotations and their arguments, and a glossary of used terms.
+
 </div>
 </div>
-
-<h2> Contact </h2>
-
-For questions or suggestions:
-
-- Open an issue on the [`pynxtools-foo` GitHub](https://github.com/FAIRmat-NFDI/pynxtools-foo/issues)
-- Join our [Discord channel](https://discord.gg/Gyzx3ukUw8)
-- Get in contact with our [lead developers](contact.md).
-
-<h2>Project and community</h2>
-
-- [NOMAD code guidelines](https://nomad-lab.eu/prod/v1/staging/docs/reference/code_guidelines.html)
-
-[The work is funded by the Deutsche Forschungsgemeinschaft (DFG, German Research Foundation) - 460197019 (FAIRmat).](https://gepris.dfg.de/gepris/projekt/460197019?language=en)
