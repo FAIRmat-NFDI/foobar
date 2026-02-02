@@ -1,5 +1,5 @@
-ARG JUPYTER_TAG=2025-10-20
-ARG BASE_JUPYTER=quay.io/jupyter/scipy-notebook
+ARG JUPYTER_TAG=2025-12-31
+ARG BASE_JUPYTER=quay.io/jupyter/base-notebook
 ARG UV_VERSION=0.9
 ARG PLUGIN_NAME=pynxtools-foo
 # Replace plugin-name by __package_name
