@@ -1,6 +1,6 @@
 # Welcome to the `foobar` documentation
 
-Nomad example template
+Short Description.
 
 ## Introduction
 

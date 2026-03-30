@@ -18,6 +18,4 @@ tool = NORTHTool(
     display_name='my_north_tool',
 )
 
-north_tool = NorthToolEntryPoint(
-    id_url_safe='foobar_my_north_tool', north_tool=tool
-)
+north_tool = NorthToolEntryPoint(north_tool=tool)

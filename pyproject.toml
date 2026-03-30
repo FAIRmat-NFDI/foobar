@@ -10,10 +10,10 @@ classifiers = [
     "Programming Language :: Python :: 3.10",
     "Programming Language :: Python :: 3.11",
     "Programming Language :: Python :: 3.12",
-    "License :: OSI Approved :: MIT License",
+    
 ]
 name = "foobar"
-description = "Nomad example template"
+description = "Short Description."
 version = "0.1.0"
 readme = "README.md"
 requires-python = ">=3.10"
@@ -25,13 +25,13 @@ maintainers = [
 ]
 license = { file = "LICENSE" }
 dependencies = [
-    "nomad-lab @ git+https://gitlab.mpcdf.mpg.de/nomad-lab/nomad-FAIR.git@develop",
+    "nomad-lab>=1.4.1",
     "pydantic",
     "temporalio"
 ]
 
 [project.urls]
-Repository = "https://github.com/RubelMozumder/foobar"
+Repository = "https://github.com/FAIRmat-NFDI/foobar"
 
 [project.optional-dependencies]
 dev = [
@@ -141,7 +141,7 @@ normalizer_entry_point = "foobar.normalizers:normalizer_entry_point"
 app_entry_point = "foobar.apps:app_entry_point"
 example_upload_entry_point = "foobar.example_uploads:example_upload_entry_point"
 action_entry_point = "foobar.actions:simple_action_entry_point"
-north_tool_entry_point = "foobar.north_tools.my_north_tool:north_tool"
+north_entry_point = "foobar.north_tools:north_entry_point"
 [tool.cruft]
 # Avoid updating workflow files, this leads to permissions issues
 skip = [".github/*"]
