@@ -33,4 +33,4 @@ jobs:
         run: |
           # Remove the funding section to avoid validation issues with Zenodo
           sed -i '/^funding:/,$d' CITATION.cff
-          uv run --with cffconvert --validate --format zenodo || exit 1
+          uv run --with cffconvert cffconvert --validate --format zenodo || exit 1
